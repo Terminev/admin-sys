@@ -16,8 +16,8 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           
           script: |
-            mkdir express-website
-            cd express-website
-            git clone git@github.com:Terminev/admin-sys.git
+            cd admin-sys
+            git pull git@github.com:Terminev/admin-sys.git
             systemctl restart nginx
+            pm2 realod index.js
             echo "Deploy OK"
