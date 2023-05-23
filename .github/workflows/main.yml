@@ -18,6 +18,5 @@ jobs:
           script: |
             cd admin-sys
             git pull git@github.com:Terminev/admin-sys.git
-            systemctl restart nginx
             pm2 realod index.js
             echo "Deploy OK"
