@@ -19,6 +19,5 @@ jobs:
             mkdir express-website
             cd express-website
             git clone git@github.com:Terminev/admin-sys.git
+            systemctl restart nginx
             echo "Deploy OK"
-          
-          
