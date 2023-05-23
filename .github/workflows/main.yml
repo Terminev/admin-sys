@@ -1,0 +1,24 @@
+name : build & deploy
+
+on:
+  push:
+    branches: [master]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Deploy Express App
+        uses : appleboy/ssh-action@v0.1.2
+        with :
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{secrets.SSH_USERNAME}}
+          
+          script: |
+            mkdir express-website
+            cd express-website
+            git clone git@github.com:Terminev/admin-sys.git
+            echo "Deploy OK"
+          
+          
