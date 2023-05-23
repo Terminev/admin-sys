@@ -18,5 +18,5 @@ jobs:
           script: |
             cd admin-sys
             git pull git@github.com:Terminev/admin-sys.git
-            pm2 realod index.js
+            pm2 reload index.js
             echo "Deploy OK"
