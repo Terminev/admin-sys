@@ -18,5 +18,6 @@ jobs:
           script: |
             cd admin-sys
             git pull git@github.com:Terminev/admin-sys.git
+            yarn install
             pm2 reload index.js
             echo "Deploy OK"
